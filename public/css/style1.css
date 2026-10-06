@@ -1,0 +1,134 @@
+/* =========================================================
+   NEXT.JS / REACT STATIC MODE OVERRIDES
+   ========================================================= */
+
+/* The original Ashade JS adds .is-init / .is-loaded to body.
+   Since we are not using core.js, make the page visible by default. */
+body {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+/* =========================================================
+   HOME BACKGROUND
+   ========================================================= */
+
+.ashade-home-background {
+    background-image: url("/img/bgs/bg-home01.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   HOME LINKS
+   The original JS animates these elements.
+   Make them visible without JavaScript.
+   ========================================================= */
+
+.ashade-home-link--works span:first-child,
+.ashade-home-link--works span:last-child,
+.ashade-home-link--contacts span:first-child,
+.ashade-home-link--contacts span:last-child {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.ashade-logo,
+.ashade-logo-block {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+#ashade-header {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.ashade-nav,
+.ashade-nav-block,
+.main-menu,
+.main-menu li {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#ashade-footer {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
+   HOME CONTENT
+   ========================================================= */
+
+.ashade-home-link-wrap {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
+   ASHADE PAGE BACKGROUND
+   ========================================================= */
+
+.ashade-page-background {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* =========================================================
+   REMOVE INITIAL JS TRANSFORMS
+   ========================================================= */
+
+.ashade-home-link,
+.ashade-home-link-wrap,
+.ashade-page-title-wrap,
+.ashade-home-return {
+    visibility: visible;
+}
+
+
+/* =========================================================
+   CONTACT BLOCK
+   ========================================================= */
+
+#ashade-home-contacts {
+    visibility: visible;
+}
+
+
+/* =========================================================
+   GENERAL SAFETY
+   ========================================================= */
+
+body.is-init,
+body.is-loaded {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
