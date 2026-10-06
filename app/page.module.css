@@ -1,0 +1,633 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background: #050505;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  background-image: url("/images/home.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.35) 45%,
+      rgba(0, 0, 0, 0.72) 100%
+    ),
+    rgba(0, 0, 0, 0.28);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 110px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 70px 0 100px;
+}
+
+.logo {
+  display: block;
+  width: 85px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.navigation button {
+  border: 0;
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.navigation button:hover {
+  color: #fff;
+}
+
+.navigation .more {
+  font-size: 16px;
+  letter-spacing: 4px;
+}
+
+/* =========================================
+   SOCIAL
+========================================= */
+
+.social {
+  position: fixed;
+
+  left: 52px;
+  bottom: 30px;
+
+  z-index: 20;
+
+  display: flex;
+  gap: 35px;
+}
+
+.social a {
+  color: rgba(255, 255, 255, 0.65);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  transition: color 0.2s ease;
+}
+
+.social a:hover {
+  color: #fff;
+}
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.copyright {
+  position: fixed;
+
+  right: 55px;
+  bottom: 30px;
+
+  z-index: 20;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================
+   VERTICAL LINKS
+========================================= */
+
+.verticalLink {
+  position: fixed;
+
+  z-index: 25;
+
+  width: 150px;
+  height: 450px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #fff;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  transition: opacity 0.25s ease;
+}
+
+.verticalLink:hover {
+  opacity: 0.7;
+}
+
+.verticalLink span {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  opacity: 0.9;
+}
+
+.verticalLink strong {
+  font-size: 42px;
+
+  font-weight: 700;
+
+  line-height: 0.9;
+
+  letter-spacing: -1px;
+}
+
+/* =========================================
+   HOME RIGHT CONTACT
+========================================= */
+
+.contactRight {
+  right: 350px;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(180deg);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   HOME RIGHT EXPLORE
+========================================= */
+
+.exploreRight {
+  right: 120px;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(180deg);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contactPage {
+  position: relative;
+
+  z-index: 10;
+
+  min-height: 100vh;
+
+  padding-top: 150px;
+  padding-bottom: 120px;
+}
+
+/* =========================================
+   CONTACT LEFT VERTICAL
+========================================= */
+
+.contactLeft {
+  left: 0;
+  top: 50%;
+
+  transform:
+    translateY(-50%)
+    rotate(180deg);
+
+  width: 130px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* =========================================
+   RIGHT PANEL
+========================================= */
+
+.rightPanel {
+  position: fixed;
+
+  right: 0;
+  top: 0;
+
+  width: 150px;
+  height: 100vh;
+
+  z-index: 25;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.rightPanel .verticalLink {
+  position: relative;
+
+  right: auto;
+  top: auto;
+
+  width: 100%;
+  height: 50%;
+
+  transform: rotate(180deg);
+
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.rightPanel .backLink {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+/* =========================================
+   CONTACT CONTENT
+========================================= */
+
+.contactContent {
+  width: calc(100% - 280px);
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 0 40px;
+}
+
+/* =========================================
+   CONTACT INTRO
+========================================= */
+
+.contactIntro {
+  max-width: 800px;
+
+  margin: 0 auto 85px;
+
+  text-align: center;
+}
+
+.contactIntro p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 18px;
+
+  line-height: 1.65;
+}
+
+/* =========================================
+   CONTACT GRID
+========================================= */
+
+.contactGrid {
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.7fr;
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+/* =========================================
+   CONTACT INFO
+========================================= */
+
+.contactInfo {
+  padding-top: 10px;
+}
+
+.smallTitle {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  margin-bottom: 6px;
+}
+
+.contactInfo h2 {
+  margin: 0 0 35px;
+
+  color: #fff;
+
+  font-size: 30px;
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.infoItem {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.infoItem p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 20px;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.contactForm {
+  width: 100%;
+}
+
+.formRow {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  background: rgba(0, 0, 0, 0.18);
+
+  color: #fff;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.contactForm input {
+  height: 54px;
+
+  padding: 0 22px;
+}
+
+.contactForm textarea {
+  resize: none;
+
+  padding: 20px 22px;
+
+  min-height: 245px;
+}
+
+.contactForm input::placeholder,
+.contactForm textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  border-color: rgba(255, 255, 255, 0.65);
+
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.submitContainer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 22px;
+}
+
+.submitContainer button {
+  min-width: 200px;
+
+  height: 54px;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  background: transparent;
+
+  color: #fff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.submitContainer button:hover {
+  background: #fff;
+
+  color: #000;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .header {
+    padding: 0 40px;
+  }
+
+  .navigation {
+    gap: 20px;
+  }
+
+  .contactRight {
+    right: 250px;
+  }
+
+  .exploreRight {
+    right: 70px;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 80px;
+
+    padding: 0 20px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .logo {
+    width: 70px;
+  }
+
+  .contactContent {
+    width: calc(100% - 100px);
+
+    padding: 0 20px;
+  }
+
+  .contactIntro {
+    margin-bottom: 50px;
+  }
+
+  .contactIntro p {
+    font-size: 15px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .contactLeft {
+    width: 65px;
+  }
+
+  .rightPanel {
+    width: 65px;
+  }
+
+  .verticalLink {
+    width: 65px;
+  }
+
+  .verticalLink strong {
+    font-size: 25px;
+  }
+
+  .verticalLink span {
+    font-size: 9px;
+  }
+
+  .social {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .copyright {
+    display: none;
+  }
+}
+
+.ashade-home {
+    position: relative;
+    min-height: 100vh;
+    background-image: url("/images/home.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
