@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 
@@ -8,6 +8,9 @@ type PageMode = "home" | "contact";
 
 export default function Home() {
   const [page, setPage] = useState<PageMode>("home");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const showContact = () => {
     setPage("contact");
@@ -24,6 +27,57 @@ export default function Home() {
       behavior: "smooth",
     });
   };
+
+  async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    
+    setIsSubmitting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: String(formData.get("name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      phone: String(formData.get("phone") ?? ""),
+      message: String(formData.get("message") ?? ""),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(
+          result.message || "Unable to send your enquiry."
+        );
+      }
+
+      setSuccessMessage(result.message);
+
+      // Clear form after successful submission
+      form.reset();
+
+    } catch(error) {
+      console.error(error);
+
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Unable to send your enquiry."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
     <main className={styles.page}>
@@ -60,8 +114,8 @@ export default function Home() {
 
       {/* ================= SOCIAL ================= */}
       <div className={styles.social}>
-        <a href="#">Ln</a>
-        <a href="#">Insta</a>
+        <Link href="https://www.linkedin.com/company/king15photography/" target="_blank" rel="noopener noreferrer">Ln</Link>
+        <Link href="https://www.instagram.com/king15_photography?stkn=ZTBreHUyNXhvNGMw" target="_blank" rel="noopener noreferrer">Insta</Link>
       </div>
 
       {/* ================= COPYRIGHT ================= */}
@@ -127,7 +181,7 @@ export default function Home() {
             {/* Intro */}
             <div className={styles.contactIntro}>
               <p>
-                Nice to meet you, friend! My name is Adrew Shade. I’m a
+                Nice to meet you, friend! My name is Pawan Pal. I’m a
                 professional photographer from Faridabad, Colorado. If you
                 have any questions, suggestions or you just want to book a
                 photo session feel free to use the contact form below. Lets
@@ -166,41 +220,85 @@ export default function Home() {
 
                 <div className={styles.infoItem}>
                   <div className={styles.icon}>♧</div>
-                  <p>Ln &nbsp;&nbsp; In</p>
+                  {/* <p>Ln &nbsp;&nbsp; In</p> */}
+                  <p>
+                    <Link className={styles.link} href="https://www.linkedin.com/company/king15photography/" target="_blank" rel="noopener noreferrer">Ln</Link>&nbsp;&nbsp;
+                    <Link className={styles.link} href="https://www.instagram.com/king15_photography?stkn=ZTBreHUyNXhvNGMw" target="_blank" rel="noopener noreferrer">In</Link>
+                  </p>
                 </div>
               </div>
 
               {/* RIGHT FORM */}
               <form
                 className={styles.contactForm}
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleContactSubmit}
               >
                 <div className={styles.formRow}>
                   <input
                     type="text"
+                    name="name"
                     placeholder="Your Name"
                   />
 
                   <input
                     type="email"
+                    name="email"
                     placeholder="Your Email"
                   />
 
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="Your Phone"
                   />
                 </div>
 
                 <textarea
+                  name="message"
                   placeholder="Your Message"
                   rows={8}
                 />
 
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    left: "-9999px",
+                    width: "1px",
+                    height: "1px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <label htmlFor="website">
+                    Website
+                  </label>
+
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
                 <div className={styles.submitContainer}>
-                  <button type="submit">
-                    SEND MESSAGE
+                  <button type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Submit"}
                   </button>
+                </div>
+                <div className={styles.contactForm}>
+                  {successMessage && (
+                    <p className="success-message">
+                      {successMessage}
+                    </p>
+                  )}
+
+                  {errorMessage && (
+                    <p className="error-message">
+                      {errorMessage}
+                    </p>
+                  )}
                 </div>
               </form>
             </div>
