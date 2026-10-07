@@ -136,13 +136,13 @@ export default function Home() {
           </button>
 
           {/* Explore Works - RIGHT */}
-          <button
+          {/* <button
             className={`${styles.verticalLink} ${styles.exploreRight}`}
             type="button"
           >
             <span>MY PHOTO PORTFOLIO</span>
             <strong>EXPLORE WORKS</strong>
-          </button>
+          </button> */}
         </>
       )}
 
@@ -160,13 +160,13 @@ export default function Home() {
 
           {/* RIGHT VERTICAL LINKS */}
           <div className={styles.rightPanel}>
-            <button
+            {/* <button
               className={styles.verticalLink}
               type="button"
             >
               <span>MY PHOTO PORTFOLIO</span>
               <strong>EXPLORE WORKS</strong>
-            </button>
+            </button> */}
 
             <button
               className={`${styles.verticalLink} ${styles.backLink}`}
@@ -220,7 +220,6 @@ export default function Home() {
 
                 <div className={styles.infoItem}>
                   <div className={styles.icon}>♧</div>
-                  {/* <p>Ln &nbsp;&nbsp; In</p> */}
                   <p>
                     <Link className={styles.link} href="https://www.linkedin.com/company/king15photography/" target="_blank" rel="noopener noreferrer">Ln</Link>&nbsp;&nbsp;
                     <Link className={styles.link} href="https://www.instagram.com/king15_photography?stkn=ZTBreHUyNXhvNGMw" target="_blank" rel="noopener noreferrer">In</Link>
