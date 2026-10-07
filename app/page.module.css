@@ -426,6 +426,10 @@
   font-size: 20px;
 }
 
+.link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 /* =========================================
    FORM
 ========================================= */
@@ -630,4 +634,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+}
+
+.success-message {
+  margin-top: 15px;
+  color: green;
+}
+
+.error-message {
+  margin-top: 15px;
+  color: red;
 }
