@@ -1,0 +1,101 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  width: 100%;
+  height: 110px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 70px 0 70px;
+  box-sizing: border-box;
+
+  transition: z-index 0.5s, transform 0.5s;
+}
+
+.headerInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0;
+}
+
+.logo {
+  display: block;
+  /* width: 8rem; */
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.headerMenu {
+  display: flex;
+  align-items: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.headerMenuLi {
+  align-items: flex-end;
+}
+
+.headerMenuLink {
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.headerMenuLink:hover {
+  color: #fff !important;
+}
+
+.navigation button {
+  border: 0;
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
+}
+
+.navigation button:hover {
+  color: #fff;
+}
+
+.navigation .more {
+  font-size: 16px;
+  letter-spacing: 4px;
+}

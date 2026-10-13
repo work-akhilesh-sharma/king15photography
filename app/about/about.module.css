@@ -1,0 +1,161 @@
+
+.page-layout {
+  --rail-color: rgba(255, 255, 255, 0.15);
+  --rail-text: #858585;
+
+  position: relative;
+  display: flex;
+  min-height: 600px;
+}
+
+/* Vertical lines: header to footer */
+.left-rail,
+.right-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  /* border-left: 1px solid var(--rail-color); */
+  pointer-events: none;
+  z-index: 2;
+}
+
+.left-rail {
+  left: 4.1%;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.right-rail {
+  right: 5.2%;
+  border-left: 0;
+  border-right: 1px solid var(--rail-color);
+}
+
+/* Content between lines */
+.page-content {
+  width: 100%;
+  min-width: 0;
+  padding: 75px 0;
+}
+
+/* Left labels: fixed vertical center */
+.left-caption,
+.left-title {
+  position: absolute;
+  top: 50%;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+  white-space: nowrap;
+  color: var(--rail-text);
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.left-caption {
+  left: -24px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  top: 450px;
+}
+
+.left-title {
+  left: 7px;
+  font-size: clamp(26px, 3vw, 46px);
+  font-weight: 700;
+  top: 320px;
+}
+
+/* Right labels */
+.back-to-label,
+.back-to-top {
+  position: absolute;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  color: var(--rail-text);
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.back-to-label {
+  top: 65%;
+  bottom: 160px;
+  right: 7px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.back-to-top {
+  top: 65%;
+  bottom: 100px;
+  right: -48px;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 700;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+/* Entrance animations */
+.from-bottom {
+  animation: backToEnter 1s ease both;
+}
+
+.from-top {
+  animation: topEnter 1s ease both;
+}
+
+/* Hover effects */
+.left-caption:hover,
+.left-title:hover,
+.back-to-label:hover,
+.back-to-top:hover {
+  color: #fff;
+}
+
+.back-to-top:hover {
+  text-shadow: 0 0 12px rgb(255 255 255 / 25%);
+}
+
+/* Entrance animation classes */
+.back-to-label.animate-in {
+  animation: backToEnter 1s ease both;
+}
+
+.back-to-top.animate-in {
+  animation: topEnter 1s ease both;
+}
+
+@keyframes backToEnter {
+  from {
+    opacity: 0;
+    translate: 0 45px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes topEnter {
+  from {
+    opacity: 0;
+    translate: 0 -45px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .left-rail,
+  .right-rail {
+    display: none;
+  }
+
+  .page-content {
+    padding: 30px 20px;
+  }
+}
