@@ -1,7 +1,8 @@
+import { Metadata } from "next";
 import AboutPage from "./AboutPage";
 
-export const metadata = {
-  title: "About Me | King15 Photography",
+export const metadata: Metadata = {
+  title: "About Me | King15Photography",
   description:
     "Meet Pawan Pal, photographer at King15 Photography in Faridabad, Haryana.",
 };

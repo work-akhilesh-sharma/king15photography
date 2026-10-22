@@ -1,33 +1,15 @@
-"use client";
+// import Link from "next/link";
+// import styles from "./page.module.css";
+import { Metadata } from "next";
+import HomePage from "./HomePage";
 
-import Link from "next/link";
-import styles from "./page.module.css";
+export const metadata: Metadata = {
+  title: {
+    absolute: "KING15Photography | Brand Films & Photography",
+  },
+  description: "KING15 Photography | Photographer & Videographer in Faridabad"
+};
 
 export default function Home() {
-  return (
-    <div className={styles.background}>
-      <div className={styles.overlay}>
-        {/* Contact Me - RIGHT */}
-        <Link href="/contacts">
-          <button
-            className={`${styles.verticalLink} ${styles.contactRight}`}
-            >
-            <span>HOW TO FIND ME</span>
-            <strong>CONTACT ME</strong>
-          </button>
-        </Link>
-        {/* <Link href="/services" className={styles.headerMenuLink}>SERVICES</Link> */}
-        {/* Explore Works - RIGHT */}
-        <Link href="/services">
-          <button
-            className={`${styles.verticalLink} ${styles.exploreRight}`}
-            type="button"
-            >
-            <span>MY PHOTO PORTFOLIO</span>
-            <strong>EXPLORE WORKS</strong>
-          </button>
-        </Link>
-      </div>
-    </div>
-  );
+  return <HomePage />;
 }

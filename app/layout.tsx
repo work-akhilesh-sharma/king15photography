@@ -8,7 +8,7 @@ import "./../public/css/responsive.css";
 
 export const metadata: Metadata = {
   title: "King15Photography",
-  description: "Professional photography services",
+  description: "Commercial Photography & Videography in Delhi NCR",
   icons: {
     icon: "/images/favicon_black/favicon.ico",
   },
