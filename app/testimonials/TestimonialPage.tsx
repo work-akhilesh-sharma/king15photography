@@ -22,95 +22,99 @@ export default function TestimonialPage() {
         <span className={styles['left-title']}>Testimonials</span>
       </aside>  
 
-      {/* <main className="ashade-content-wrap"> */}
-      <main className={styles['page-content']}>
-        <div className="ashade-content-scroll">
-            <div className="ashade-content">
-                <section className="ashade-section">       		
-                    <div className="ashade-row">
-                        <div className="ashade-col col-4">
-                            <h2>
-                                <span>Client&apos;s reviews</span>
-                                Backstory
-                            </h2>
-                        </div>
-                        <div className="ashade-col col-4">
-                            <p>After years of practice and tons of experience I learned the techniques, that helps me in my work with modern brands and companies.</p>
-                            <p>But working with famous companies does not prevent me from giving good photos to private clients. And this work in private inspires me at all.</p>
-                        </div>
-                        <div className="ashade-col col-4">
-                            <p>Here are some of the most inspiring reviews from my clients. If you wish to join this group of satisfied people or have something to say you can feel free to fill contact form below. Your opinion is very important to me, because I always try to evolve and improve in the professional field and work on mistakes.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="ashade-section">
-                    <div className="ashade-row">
-                        <div className="ashade-col col-12">
-                            <div className="ashade-testimonials-grid is-masonry">
-                                <div className="ashade-testimonials-item">
-                                    <div className="ashade-testimonials-item__author">
-                                        <div className="ashade-testimonials-item__author--image">
-                                            <Image src="/img/avatars/testimonial04.jpg" height="100" width="500" alt="Elizabeth Shown" loading="eager" unoptimized />
-                                            {/* <img src="img/avatars/testimonial01.jpg" alt="Elizabeth Shown" /> */}
-                                        </div>
-                                        <div className="ashade-testimonials-item__author--name">
-                                            <h6>
-                                                <span>Director of Anytime fitness</span>
-                                                Vishal kwatra
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="ashade-testimonials-item__content">
-                                        <div className="ashade-testimonials-item__stars ashade-stars4"></div>
-                                        <p>The shoot experience was excellent. The team was professional, creative, punctual, and easy to work with. Highly recommended for their quality, dedication, and seamless execution.</p>
-                                    </div>
-                                </div>
-                                <div className="ashade-testimonials-item">
-                                    <div className="ashade-testimonials-item__author">
-                                        <div className="ashade-testimonials-item__author--image">
-                                            <Image src="/img/avatars/testimonial05.jpg" height="100" width="500" alt="Tony Norton" loading="eager" unoptimized />
-                                            {/* <img src="img/avatars/testimonial02.jpg" alt="Tony Norton" /> */}
-                                        </div>
-                                        <div className="ashade-testimonials-item__author--name">
-                                            <h6>
-                                                <span>CEO of Mission fitness</span>
-                                                Karan kholi
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="ashade-testimonials-item__content">
-                                        <div className="ashade-testimonials-item__stars ashade-stars5"></div>
-                                        <p>Working with this team was a refreshing experience. They understood our vision perfectly and captured the energy of Mission Fitness beautifully. The final work felt authentic, engaging, and impactful.</p>
-                                    </div>
-                                </div>
-                                <div className="ashade-testimonials-item">
-                                    <div className="ashade-testimonials-item__author">
-                                        <div className="ashade-testimonials-item__author--image">
-                                            <Image src="/img/avatars/testimonial06.jpg" height="100" width="500" alt="Traci Harden" loading="eager" unoptimized />
-                                            {/* <img src="img/avatars/testimonial03.jpg" alt="Traci Harden" /> */}
-                                        </div>
-                                        <div className="ashade-testimonials-item__author--name">
-                                            <h6>
-                                                <span>Bharat Petrolium corporation Limited </span>
-                                                Himanshu gupta
-                                            </h6>
-                                        </div>
-                                    </div>
-                                    <div className="ashade-testimonials-item__content">
-                                        <div className="ashade-testimonials-item__stars ashade-stars5"></div>
-                                        <p>Working with the King15 team was a seamless experience. Their creativity, professionalism, attention to detail, and execution delivered high-quality visuals that perfectly captured our brand and vision.
-</p>
-                                    </div>
-                                </div>      
-                            </div>
-                        </div>
-                    </div>
-                </section> 
-            </div>
-        </div>
-      </main>
+      
     
+      
+<main className={styles["page-content"]}>
+  <section className={styles.intro}>
+    <span className={styles.eyebrow}>CLIENT&apos;S REVIEWS</span>
+    <h1>Backstory</h1>
+    <p>
+      After years of practice and experience, I have learned
+      techniques that help me work with modern brands and companies.
+      Here are a few words from clients who have trusted my work.
+    </p>
+  </section>
+
+  <section
+    className={styles.testimonialsGrid}
+    aria-label="Client testimonials"
+  >
+    <article className={styles.testimonialCard}>
+      <div className={styles.stars} aria-label="4 out of 5 stars">
+        ★★★★☆
+      </div>
+      <p className={styles.review}>
+        The shoot experience was excellent. The team was
+        professional, creative, punctual, and easy to work with.
+        Highly recommended for their quality, dedication, and
+        seamless execution.
+      </p>
+      <div className={styles.author}>
+        <Image
+          src="/img/avatars/testimonial04.jpg"
+          width={64}
+          height={64}
+          alt="Vishal Kwatra"
+        />
+        <div>
+          <h3>Vishal Kwatra</h3>
+          <span>Director, Anytime Fitness</span>
+        </div>
+      </div>
+    </article>
+
+    <article className={styles.testimonialCard}>
+      <div className={styles.stars} aria-label="5 out of 5 stars">
+        ★★★★★
+      </div>
+      <p className={styles.review}>
+        Working with this team was a refreshing experience.
+        They understood our vision perfectly and captured the
+        energy of Mission Fitness beautifully. The final work
+        felt authentic, engaging, and impactful.
+      </p>
+      <div className={styles.author}>
+        <Image
+          src="/img/avatars/testimonial05.jpg"
+          width={64}
+          height={64}
+          alt="Karan Kholi"
+        />
+        <div>
+          <h3>Karan Kholi</h3>
+          <span>CEO, Mission Fitness</span>
+        </div>
+      </div>
+    </article>
+
+    <article className={styles.testimonialCard}>
+      <div className={styles.stars} aria-label="5 out of 5 stars">
+        ★★★★★
+      </div>
+      <p className={styles.review}>
+        Working with the King15 team was a seamless experience.
+        Their creativity, professionalism, attention to detail,
+        and execution delivered high-quality visuals that
+        perfectly captured our brand and vision.
+      </p>
+      <div className={styles.author}>
+        <Image
+          src="/img/avatars/testimonial06.jpg"
+          width={64}
+          height={64}
+          alt="Himanshu Gupta"
+        />
+        <div>
+          <h3>Himanshu Gupta</h3>
+          <span>Bharat Petroleum Corporation Limited</span>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+  
+
       <div className="ashade-to-top-wrap ashade-back-wrap">
         <div className="ashade-back is-to-top">
             <span>Back to</span>

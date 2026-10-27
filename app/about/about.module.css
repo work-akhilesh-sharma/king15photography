@@ -1,33 +1,37 @@
 
 .page-layout {
-  --rail-color: rgba(255, 255, 255, 0.15);
+  --rail-color: rgba(255, 255, 255 / 15%);
   --rail-text: #858585;
 
   position: relative;
-  display: flex;
-  min-height: 600px;
+  /* display: grid; */
+  /* grid-template-columns: minmax(0, 1fr); */
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
 }
 
 /* Vertical lines: header to footer */
 .left-rail,
 .right-rail {
+  display: block;
   position: absolute;
   top: 0;
   bottom: 0;
   width: 1px;
   /* border-left: 1px solid var(--rail-color); */
   pointer-events: none;
-  z-index: 2;
+  z-index: 5;
 }
 
 .left-rail {
   left: 4.1%;
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid var(--rail-color);
 }
 
 .right-rail {
   right: 5.2%;
-  border-left: 0;
+  /* border-left: 0; */
   border-right: 1px solid var(--rail-color);
 }
 
@@ -35,35 +39,42 @@
 .page-content {
   width: 100%;
   min-width: 0;
-  padding: 75px 0;
+  padding: 110px clamp(28px, 8vw, 120px) 90px;
 }
 
 /* Left labels: fixed vertical center */
 .left-caption,
-.left-title {
+.left-title,
+.back-to-label,
+.back-to-top {
   position: absolute;
-  top: 50%;
   writing-mode: vertical-rl;
-  transform: translateY(-50%) rotate(180deg);
   white-space: nowrap;
   color: var(--rail-text);
-  transition: color 0.3s ease;
   text-transform: uppercase;
+  transition: color 0.3s ease;
+  /* top: 50%;
+  transform: translateY(-50%) rotate(180deg); */
+}
+
+.left-caption,
+.left-title {
+  transform: translateY(-50) rotate(180deg);
 }
 
 .left-caption {
   left: -24px;
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 1px;
   top: 450px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .left-title {
   left: 7px;
+  top: 320px;
   font-size: clamp(26px, 3vw, 46px);
   font-weight: 700;
-  top: 320px;
 }
 
 /* Right labels */
@@ -80,17 +91,16 @@
 
 .back-to-label {
   top: 65%;
-  bottom: 160px;
   right: 7px;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 1px;
 }
 
 .back-to-top {
   top: 65%;
-  bottom: 100px;
   right: -48px;
+  /* bottom: 100px; */
   font-size: clamp(30px, 3vw, 46px);
   font-weight: 700;
   text-decoration: none;
@@ -106,6 +116,13 @@
   animation: topEnter 1s ease both;
 }
 
+.left-caption,
+.left-title,
+.back-to-label,
+.back-to-top {
+  transition: color 0.3s ease;
+}
+
 /* Hover effects */
 .left-caption:hover,
 .left-title:hover,
@@ -116,6 +133,268 @@
 
 .back-to-top:hover {
   text-shadow: 0 0 12px rgb(255 255 255 / 25%);
+}
+
+.page-content :global(.ashade-content-wrap),
+.page-content :global(.ashade-content-scroll),
+.page-content :global(.ashade-content),
+.page-content :global(.ashade-section) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0
+}
+
+.page-content :global(.ashade-row) {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 40px);
+  width: 100%;
+  margin-inline: 0;
+}
+
+.page-content :global(.ashade-col) {
+  width: auto;
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: 0
+}
+
+.page-content :global(.col-12) {
+  grid-column: span 12;
+}
+
+.page-content :global(.col-8) {
+  grid-column: span 8;
+}
+
+.page-content :global(.col-6) {
+  grid-column: span 6;
+}
+
+.page-content :global(.col-3) {
+  grid-column: span 3;
+}
+
+.page-content :global(.col-2) {
+  grid-column: span 2;
+}
+
+.page-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.page-content :global(.ashade-col) > img {
+  width: 0;
+  object-fit: cover;
+}
+
+.page-content :global(.ashade-counter-item) {
+  min-width: 0;
+  height: 100%;
+}
+
+
+/* Before/after comparison */
+.page-content :global(.king15-before-after) {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-content :global(.king15-before-after) > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-content :global(.king15-before-after) > div > img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .page-content {
+    padding: 100px 6% 80px;
+  }
+
+  .left-rail,
+  .right-rail {
+    display: none;
+  }
+
+  .page-content :global(.col-2) {
+    grid-column: span 1;
+  }
+
+  .page-content :global(.col-8) {
+    grid-column: span 10;
+  }
+}
+
+/* Mobile */
+@media (max-width: 769px) {
+  .page-layout {
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  .page-layout > .left-rail,
+  .page-layout > .right-rail {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  .page-layout > .left-rail {
+    left: 4.1%;
+    border: 0 !important;
+  }
+
+  .page-layout > .right-rail {
+    right: 5.2%;
+    border: 0 !important;
+  }
+
+  .page-layout > .left-rail::before,
+  .page-layout > .right-rail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgb(255 255 255 / 25%);
+  }
+
+  .page-layout > .left-rail::before {
+    left: 0;
+  }
+
+  .page-layout > .right-rail::before {
+    right: 0;
+  }
+
+  .page-content {
+    padding: 90px 20px 90px;
+  }
+
+  .page-content :global(.ashade-row) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .page-content :global(.col-12),
+  .page-content :global(.col-8),
+  .page-content :global(.col-6),
+  .page-content :global(.col-3),
+  .page-content :global(.col-2) {
+    grid-column: 1 / -1;
+  }
+
+  /* Counters: two columns on phones */
+  .page-content :global(.ashade-row.ashade-keep-on-tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
+  }
+
+  .page-content :global(.ashade-row.ashade-keep-on-tablet) > * {
+    grid-column: auto;
+  }
+
+  .page-content :global(.ashade-counter-label) {
+    overflow-wrap: anywhere;
+  }
+
+  /* Testimonials */
+  .page-content :global(.ashade-testimonials-carousel) {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .page-content :global(.ashade-testimonials-item__author) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .page-content :global(.ashade-testimonials-nav) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .left-rail,
+  .right-rail {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-layout > .left-rail,
+  .page-layout > .right-rail {
+    display: none !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .page-content {
+    padding: 82px 16px 80px;
+  }
+
+  .page-content h1 {
+    font-size: clamp(28px, 8vw, 40px);
+  }
+
+  .page-content h2 {
+    font-size: clamp(25px, 7vw, 34px);
+    line-height: 1.2;
+  }
+
+  .page-content h3 {
+    font-size: clamp(23px, 6.5vw, 32px);
+    line-height: 1.25;
+  }
+
+  .page-content p {
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+
+  .page-content :global(.ashade-counter-value) {
+    font-size: clamp(26px, 8vw, 38px);
+  }
+
+  .page-content :global(.king15-before-after) {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .left-caption,
+  .left-title,
+  .back-to-label,
+  .back-to-top {
+    transition: none;
+    animation: none !important;
+  }
 }
 
 /* Entrance animation classes */
@@ -157,5 +436,60 @@
 
   .page-content {
     padding: 30px 20px;
+  }
+}
+
+
+/* About page: visible decorative vertical rails */
+@media (min-width: 769px) {
+  .page-layout {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .page-layout > .left-rail,
+  .page-layout > .right-rail {
+    display: block !important;
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    z-index: 10;
+    pointer-events: none;
+    border: 0 !important;
+  }
+
+  .page-layout > .left-rail {
+    left: 4.1%;
+  }
+
+  .page-layout > .right-rail {
+    right: 5.2%;
+  }
+
+  .page-layout > .left-rail::after,
+  .page-layout > .right-rail::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.22);
+  }
+
+  .page-layout > .left-rail::after {
+    left: 0;
+  }
+
+  .page-layout > .right-rail::after {
+    right: 0;
+  }
+}
+
+/* Hide rails on small screens */
+@media (max-width: 768px) {
+  .page-layout > .left-rail,
+  .page-layout > .right-rail {
+    display: none !important;
   }
 }
