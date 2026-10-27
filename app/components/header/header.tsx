@@ -3,59 +3,68 @@
 import styles from "./header.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+
+const menuItems = [
+  { label: "Home", href: "/" },
+  { label: "About Me", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Testimonials", href: "/testimonials" },
+  { label: "Contacts", href: "/contacts" },
+];
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
 
   return (
     <header className={styles.header}>
       <div className={styles.headerInner}>
-        {/* Logo */}
-        {/* <div className={styles.logo}> */}
-          <Link href="/" className={styles.logo}>
-            <Image 
-              src="/logo.PNG"
-              width={190}
-              height={65}
-              className="h-auto w-[190px] object-contain"
-              alt="King15 Photography"
-              loading="eager"
-            />
-            {/* <img src="logo.PNG" alt="King15 Photography" /> */}
-          </Link>
-        {/* </div> */}
+        <Link href="/" className={styles.logo} onClick={closeMenu} aria-label="KING15 Photography home">
+          <Image 
+            src="/logo.PNG"
+            width={190}
+            height={65}
+            alt="King15 Photography"
+            priority
+            sizes="(max-width: 480px) 125px, 190px"
+            loading="eager"
+          />
+        </Link>
 
-        {/* Navigation */}
-        <div className={styles.navbar}>
-          <nav className={styles.navigation}>
-            <ul className={styles.headerMenu}>
-              <li className={styles.headerMenuLi}>
-                <Link href="/" className={styles.headerMenuLink}>HOME</Link>
-                {/* <button onClick={showHome}>HOME</button> */}
+        <button
+          type="button"
+          className={styles.menuToggle}
+          onClick={() => setIsMenuOpen((open) => !open)}
+          aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={isMenuOpen}
+          aria-controls="main-navigation"
+        >
+          <span className={`${styles.menuBar} ${isMenuOpen ? styles.menuBarTopOpen : ""}`} />
+          <span className={`${styles.menuBar} ${isMenuOpen ? styles.menuBarMiddleOpen : ""}`} />
+          <span className={`${styles.menuBar} ${isMenuOpen ? styles.menuBarBottomOpen : ""}`} />
+        </button>
+
+        <nav 
+          id="main-navigation"
+          className={`${styles.navbar} ${isMenuOpen ? styles.navbarOpen : ""}`}
+          aria-label="Main navigation"
+        >
+          <ul className={styles.headerMenu}>
+            {menuItems.map((item) => (
+              <li className={styles.headerMenuLi} key={item.href}>
+                <Link
+                  href={item.href}
+                  className={styles.headerMenuLink}
+                  onClick={closeMenu}
+                >{item.label.toUpperCase()}</Link>
               </li>
-              <li className={styles.headerMenuLi}>
-                <Link href="/about" className={styles.headerMenuLink}>ABOUT ME</Link>
-                {/* <button type="button">ABOUT ME</button> */}
-              </li>
-              <li className={styles.headerMenuLi}>
-                <Link href="/services" className={styles.headerMenuLink}>SERVICES</Link>
-                {/* <button type="button">SERVICES</button> */}
-              </li>
-              <li className={styles.headerMenuLi}>
-                <Link href="/testimonials" className={styles.headerMenuLink}>TESTIMONIALS</Link>
-                {/* <button type="button">TESTIMONIALS</button> */}
-              </li>
-              <li className={styles.headerMenuLi}>
-                <Link href="/contacts" className={styles.headerMenuLink}>CONTACTS</Link>
-                {/* <button onClick={showContact}>CONTACTS</button> */}
-              </li>
-              {/* <li className={styles.headerMenuLi}>
-                <button type="button" className={styles.more}>
-                  •••
-                </button>
-              </li> */}
-            </ul>
-          </nav>
-        </div>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );

@@ -132,7 +132,7 @@ export default function ContactPage() {
         </div>
 
         <div className={styles['container-flex']}>
-          <div className={styles['col-flex']} style={{ flexGrow: 3 }}>
+          <div className={styles['col-flex']}>
             <div className={styles.contactInfo}>
                 <div className={styles.smallTitle}>
                   MY CONTACTS AND SOCIALS
@@ -168,7 +168,7 @@ export default function ContactPage() {
                 </div>
               </div>
           </div>      
-          <div className={styles['col-flex']} style={{ flexGrow: 7 }}>
+          <div className={styles['col-flex']}>
             <section className={styles.mapSection}>
               <div className={styles.mapContainer}>
                 <iframe 

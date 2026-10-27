@@ -1,63 +1,14 @@
-.verticalLink {
-  position: fixed;
-
-  z-index: 25;
-
-  width: 150px;
-  height: 450px;
-
-  border: 0;
-
-  background: transparent;
-
-  color: rgba(255, 255, 255, 0.5);
-
-  cursor: pointer;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 5px;
-
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-
-  transition: opacity 0.25s ease;
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
 }
 
-.verticalLink:hover {
-  opacity: 0.7;
-  color: #fff;
-}
-
-.verticalLink span {
-  font-size: 12px;
-
-  font-weight: 600;
-
-  letter-spacing: 0.5px;
-
-  opacity: 0.9;
-}
-
-.verticalLink strong {
-  font-size: 42px;
-
-  font-weight: 700;
-
-  line-height: 0.9;
-
-  letter-spacing: -1px;
-}
-
-.verticalLabel {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  height: 300px;
+.image-gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* border-radius: 4px; */
 }
 
 .verticalLabelText {
@@ -75,7 +26,6 @@
   background-color: rgba(255, 255, 255, 0.5);
   flex-shrink: 0;
 }
-
 
 .verticalWrapper {
   display: flex;
@@ -260,6 +210,230 @@
   animation: topEnter 1s ease both;
 }
 
+
+.gallery {
+  --line-color: rgba(255, 255, 255, 0.25);
+
+  position: relative;
+  display: grid;
+  grid-template-columns: 1px minmax(0, 1fr) 1px;
+  gap: clamp(12px, 2.5vw, 36px);
+
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  padding: 30px clamp(12px, 3vw, 40px);
+  box-sizing: border-box;
+}
+
+.lineLeft,
+.lineRight {
+  width: 1px;
+  height: 100%;
+  min-height: 300px;
+  background: var(--line-color);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(11px, 1.5vw, 24px);
+}
+
+.card {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  isolation: isolate;
+  background: #181818;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: clamp(14px, 2vw, 28px);
+  box-sizing: border-box;
+
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.48) 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.card:hover .overlay,
+.card:focus-within .overlay {
+  opacity: 1;
+}
+
+.card:hover .image {
+  transform: scale(1.06);
+}
+
+.category {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #ccc;
+}
+
+.overlay h2 {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 30px);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.explore {
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.08)
+    );
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .gallery {
+    gap: 10px;
+    padding: 20px 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .overlay {
+    opacity: 1;
+    gap: 8px;
+    padding: 18px;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.05)
+    );
+  }
+
+  .overlay h2 {
+    font-size: 23px;
+  }
+
+  .overlay p {
+    font-size: 13px;
+  }
+
+  .lineLeft,
+  .lineRight {
+    min-height: 100%;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  cursor: pointer;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  color: white;
+
+  background: rgba(0, 0, 0, 0.58);
+  backdrop-filter: blur(2px);
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay,
+.card:focus-within .overlay {
+  opacity: 1;
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.cardActions {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.cardActions button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .overlay {
+    transition: none;
+  }
+}
+
+
 @keyframes backToEnter {
   from {
     opacity: 0;
@@ -290,5 +464,484 @@
 
   .page-content {
     padding: 30px 20px;
+  }
+}
+
+
+
+/* ========================================
+   SERVICES PAGE LAYOUT
+======================================== */
+
+.page-layout {
+  --rail-color: rgb(255 255 255 / 22%);
+  --rail-text: #858585;
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* ========================================
+   OUTER VERTICAL RAILS
+   Similar to the About page
+======================================== */
+
+.left-rail,
+.right-rail {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.left-rail {
+  left: 4.1%;
+}
+
+.right-rail {
+  right: 5.2%;
+}
+
+.left-rail::after,
+.right-rail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--rail-color);
+}
+
+.left-rail::after {
+  left: 0;
+}
+
+.right-rail::after {
+  right: 0;
+}
+
+/* Vertical labels */
+.left-caption,
+.left-title,
+.back-to-label,
+.back-to-top {
+  position: absolute;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  color: var(--rail-text);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.left-caption,
+.left-title {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.left-caption {
+  top: 450px;
+  left: -24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.left-title {
+  top: 320px;
+  left: 7px;
+  font-size: clamp(26px, 3vw, 46px);
+  font-weight: 700;
+}
+
+.back-to-label,
+.back-to-top {
+  transform: rotate(180deg);
+}
+
+.back-to-label {
+  top: 65%;
+  right: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.back-to-top {
+  top: 65%;
+  right: -48px;
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 700;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.left-caption:hover,
+.left-title:hover,
+.back-to-label:hover,
+.back-to-top:hover {
+  color: #fff;
+}
+
+.back-to-top:hover {
+  text-shadow: 0 0 12px rgb(255 255 255 / 25%);
+}
+
+/* Entrance animations */
+.from-bottom {
+  animation: backToEnter 1s ease both;
+}
+
+.from-top {
+  animation: topEnter 1s ease both;
+}
+
+@keyframes backToEnter {
+  from {
+    opacity: 0;
+    translate: 0 45px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes topEnter {
+  from {
+    opacity: 0;
+    translate: 0 -45px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* ========================================
+   GALLERY WRAPPER
+======================================== */
+
+.gallery {
+  --line-color: rgb(255 255 255 / 25%);
+
+  /* display: grid; */
+  display: block;
+  width: 100%;
+  max-width: 1800px;
+  min-width: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin-inline: auto;
+  padding: 125px clamp(24px, 8vw, 120px) 100px;
+  box-sizing: border-box;
+
+  /* grid-template-columns: 1px minmax(0, 1fr) 1px;
+  align-items: stretch;
+  gap: clamp(14px, 2.5vw, 36px); */
+}
+
+.lineLeft,
+.lineRight {
+  display: none;
+  width: 1px;
+  min-height: 100%;
+  background: var(--line-color);
+}
+
+/* ========================================
+   RESPONSIVE IMAGE GRID
+======================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: start;
+  gap: clamp(11px, 1.5vw, 24px);
+
+  width: 100%;
+  min-width: 0;
+}
+
+.card {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  isolation: isolate;
+  background: #181818;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 700ms ease;
+}
+
+/* ========================================
+   IMAGE OVERLAY
+======================================== */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: clamp(14px, 2vw, 28px);
+  box-sizing: border-box;
+
+  color: #fff;
+
+  background: linear-gradient(
+    to top,
+    rgb(0 0 0 / 90%) 0%,
+    rgb(0 0 0 / 50%) 48%,
+    rgb(0 0 0 / 5%) 100%
+  );
+
+  opacity: 0;
+  transition: opacity 350ms ease;
+}
+
+.category {
+  color: #ccc;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.overlay h2 {
+  margin: 0;
+  font-size: clamp(18px, 1.8vw, 30px);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
+.overlay p {
+  margin: 0;
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.explore {
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+/* Desktop hover and keyboard focus */
+@media (hover: hover) and (pointer: fine) {
+  .overlay {
+    opacity: 0;
+  }
+
+  .card:hover .overlay,
+  .card:focus-within .overlay {
+    opacity: 1;
+  }
+
+  .card:hover .image {
+    transform: scale(1.05);
+  }
+}
+
+/* Touch devices: keep the title visible */
+@media (hover: none), (pointer: coarse) {
+  .overlay {
+    opacity: 1;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 16px;
+
+    background: linear-gradient(
+      to top,
+      rgb(0 0 0 / 85%) 0%,
+      rgb(0 0 0 / 30%) 45%,
+      transparent 100%
+    );
+  }
+
+  .overlay p {
+    display: none;
+  }
+
+  .category {
+    font-size: 9px;
+  }
+
+  .overlay h2 {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+
+  .explore {
+    display: block;
+    margin-top: 4px;
+  }
+}
+
+/* Keyboard users */
+.card:focus-within .overlay {
+  opacity: 1;
+}
+
+/* ========================================
+   TABLETS AND SMALL LAPTOPS
+======================================== */
+
+@media (max-width: 1100px) {
+  .gallery {
+    padding-inline: 6%;
+    gap: 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .overlay {
+    padding: 18px;
+  }
+
+  .overlay h2 {
+    font-size: clamp(18px, 2.5vw, 26px);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  /* Hide outer page rails on small screens */
+  .page-layout > .left-rail,
+  .page-layout > .right-rail {
+    display: none;
+  }
+
+  .gallery {
+    min-height: 100svh;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+
+    padding: 90px 20px 90px;
+  }
+
+  /* Hide inner gallery rails on mobile */
+  .lineLeft,
+  .lineRight {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .card {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Always show information on touch devices */
+  .overlay {
+    opacity: 1;
+    gap: 8px;
+    padding: 14px;
+
+    background: linear-gradient(
+      to top,
+      rgb(0 0 0 / 90%),
+      rgb(0 0 0 / 8%)
+    );
+  }
+
+  .category {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .overlay h2 {
+    font-size: clamp(15px, 3.4vw, 22px);
+  }
+
+  .overlay p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .explore {
+    font-size: 9px;
+  }
+}
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 480px) {
+  .gallery {
+    padding: 82px 16px 85px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .overlay {
+    padding: 18px;
+    gap: 8px;
+  }
+
+  .category {
+    font-size: 10px;
+  }
+
+  .overlay h2 {
+    font-size: clamp(20px, 6vw, 26px);
+  }
+
+  .overlay p {
+    font-size: 13px;
+  }
+
+  .explore {
+    font-size: 10px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .image,
+  .overlay,
+  .left-caption,
+  .left-title,
+  .back-to-label,
+  .back-to-top {
+    animation: none !important;
+    transition: none !important;
   }
 }
