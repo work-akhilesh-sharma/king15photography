@@ -156,7 +156,7 @@ export default function ContactPage() {
 
                 <div className={styles.infoItem}>
                   <div className={styles.icon}>✉</div>
-                  <p>king15photographer@gmail.com</p>
+                  <p>info@king15photography.in, king15photographer@gmail.com</p>
                 </div>
 
                 <div className={styles.infoItem}>

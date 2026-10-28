@@ -14,6 +14,8 @@
   padding-inline: clamp(20px, 4.3vw, 70px);
   box-sizing: border-box;
 
+  background-color: rgba(0, 0, 0, 0.8);
+
   transition: background-color 0.3s ease;
 }
 
@@ -300,4 +302,37 @@
 .navigation .more {
   font-size: 16px;
   letter-spacing: 4px;
+}
+
+/* Active navigation item */
+.headerMenuLinkActive {
+  color: #fff !important;
+  position: relative;
+}
+
+/* Underline on desktop */
+.headerMenuLinkActive::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 16px;
+  right: 16px;
+  height: 1px;
+  background-color: #fff;
+}
+
+/* Active item in the mobile menu */
+@media (max-width: 768px) {
+  .headerMenuLinkActive {
+    background: rgb(255 255 255 / 8%);
+  }
+
+  .headerMenuLinkActive::after {
+    top: 12px;
+    bottom: 12px;
+    left: 0;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
 }

@@ -4,6 +4,7 @@ import styles from "./header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   { label: "About Me", href: "/about" },
@@ -14,6 +15,7 @@ const menuItems = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   function closeMenu() {
     setIsMenuOpen(false);
@@ -53,15 +55,24 @@ export default function Header() {
           aria-label="Main navigation"
         >
           <ul className={styles.headerMenu}>
-            {menuItems.map((item) => (
-              <li className={styles.headerMenuLi} key={item.href}>
-                <Link
-                  href={item.href}
-                  className={styles.headerMenuLink}
-                  onClick={closeMenu}
-                >{item.label.toUpperCase()}</Link>
-              </li>
-            ))}
+            {menuItems.map((item) => { 
+              const isActive = pathname === item.href;
+
+              return (
+                <li className={styles.headerMenuLi} key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`${styles.headerMenuLink} ${
+                      isActive ? styles.headerMenuLinkActive : ""
+                    }`}
+                    aria-current={isActive ? "page" : undefined}
+                    onClick={closeMenu}
+                  >
+                    {item.label.toUpperCase()}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>

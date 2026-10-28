@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Header from "./header/header";
 import Footer from "./footer/footer";
+import WhatsAppButton from "./WhatsAppButton";
 
 interface MainLayoutProps {
     children: ReactNode;
@@ -22,6 +23,7 @@ export default function MainLayout({
           <div className="site-footer">
             <Footer />
           </div>
+          <WhatsAppButton />
         </div>
     );
 }

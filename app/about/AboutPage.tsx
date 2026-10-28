@@ -37,33 +37,18 @@ export default function AboutPage() {
                     </h3>
 
                     <p>
-                      At **King15Photography**, we believe every image has a story to tell and every brand has a unique identity waiting to be discovered.
+                      At <strong>King15Photography</strong>, we believe every image has a story to tell and every brand has a unique identity waiting to be discovered.
                     </p>
                     <p>
                       We are passionate about transforming ideas into powerful visual experiences through photography, creative direction, and compelling visual storytelling. From professional portraits and lifestyle photography to brand campaigns and commercial shoots, we create visuals that capture attention, communicate emotion, and leave a lasting impression.
                     </p>
                     <p>
-                      Our approach combines creativity, attention to detail, and a deep understanding of what makes a visual truly memorable. Whether you're an individual looking to preserve a special moment or a business aiming to build a stronger brand identity, we work closely with you to bring your vision to life.
+                      Our approach combines creativity, attention to detail, and a deep understanding of what makes a visual truly memorable. Whether you&apos;re an individual looking to preserve a special moment or a business aiming to build a stronger brand identity, we work closely with you to bring your vision to life.
                     </p>
                     <p>
                       We collaborate with individuals, creators, and businesses to produce authentic, impactful, and thoughtfully crafted visuals. Every project is an opportunity to explore new perspectives, express creativity, and tell a story that connects with the right audience.
                     </p>    
-                    {/* <p>
-                      Nice to meet you, friend! My name is Pawan Pal. I’m a
-                      professional photographer from Faridabad, Haryana. I hope
-                      you enjoy my photo portfolio, and that we can create
-                      something great together!
-                    </p>
-                    <p>
-                      Through the lens, the world looks different, and I would
-                      like to show you this difference. I learned that at age 10,
-                      when I first took photos with a manual camera with my dad.
-                      Years of practice and experience helped me learn techniques
-                      that support my work with modern brands and companies. Get
-                      in touch and let’s create something together.
-                    </p> */}
                   </div>
-                  {/* IMG_8224.JPG.jpeg */}
                   <div className="ashade-col col-6 align-bottom">
                     <img
                       src="/about/IMG_8225.JPG.jpeg"
@@ -84,9 +69,9 @@ export default function AboutPage() {
                 <div className="ashade-row ashade-keep-on-tablet">
                   {[
                     ["Awards Won", "25"],
-                    ["Projects Done", "67"],
-                    ["Happy Clients", "211"],
-                    ["Greatest Shots", "5896"],
+                    ["Projects Done", "47"],
+                    ["Happy Clients", "147"],
+                    ["Greatest Shots", "596"],
                   ].map(([label, value]) => (
                     <div className="ashade-col col-3" key={label}>
                       <div className="ashade-counter-item" data-delay="3000">
