@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import styles from "./home.module.css";
-import ServicesSlider from "./components/ServicesSlider/ServicesSlider";
 
 export default function HomePage() {
   return (
-    // <>
     <div className={styles.background}>
       <div className={styles.overlay}>
         {/* Contact Me - RIGHT */}
@@ -31,7 +29,5 @@ export default function HomePage() {
         </Link>
       </div>
     </div>
-    // {/* <ServicesSlider /> */}
-  // {/* </> */}
   );
 }

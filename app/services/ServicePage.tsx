@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Service.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
@@ -101,9 +102,16 @@ export default function ServicePage() {
                   </span>
                   <h2>{service.title}</h2>
                   <p>{service.description}</p>
-                  <span className={styles.explore}>
-                    EXPLORE SERVICE ↗
-                  </span>
+                  <Link
+                    href="https://www.instagram.com/king15_photography?obrf=aG9mZjd3Ym8yNG1l"
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="KING15 Photography on Instagram"
+                  >
+                    <span className={styles.explore}>
+                      EXPLORE SERVICE ↗
+                    </span>  
+                  </Link>
                 </div>
               </article>
                 ))}

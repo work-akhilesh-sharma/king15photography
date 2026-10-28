@@ -243,7 +243,7 @@
 .card {
   position: relative;
   min-width: 0;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   isolation: isolate;
   background: #181818;
@@ -344,7 +344,7 @@
   }
 
   .card {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
 
   .overlay {
@@ -677,8 +677,9 @@
 
 .card {
   position: relative;
+  width: 100%;
   min-width: 0;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   isolation: isolate;
   background: #181818;
@@ -858,7 +859,7 @@
   }
 
   .card {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 1 / 1;
   }
 
   /* Always show information on touch devices */
@@ -908,7 +909,7 @@
   }
 
   .card {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
 
   .overlay {
