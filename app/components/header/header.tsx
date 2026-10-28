@@ -6,7 +6,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 const menuItems = [
-  { label: "Home", href: "/" },
   { label: "About Me", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Testimonials", href: "/testimonials" },

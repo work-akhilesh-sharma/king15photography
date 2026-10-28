@@ -26,11 +26,29 @@ export default function AboutPage() {
               <section className="ashade-section">
                 <div className="ashade-row ashade-row-fullheight exclude-header">
                   <div className="ashade-col col-6">
-                    <h2>
+                    {/* <h2>
                       <span>Few Words About Myself</span>
                       Nice to Meet You
-                    </h2>
+                    </h2> */}
+
+                    <h3>
+                      <span>About Us</span>
+                      We Don’t Just Capture Moments. We Create Stories.
+                    </h3>
+
                     <p>
+                      At **King15Photography**, we believe every image has a story to tell and every brand has a unique identity waiting to be discovered.
+                    </p>
+                    <p>
+                      We are passionate about transforming ideas into powerful visual experiences through photography, creative direction, and compelling visual storytelling. From professional portraits and lifestyle photography to brand campaigns and commercial shoots, we create visuals that capture attention, communicate emotion, and leave a lasting impression.
+                    </p>
+                    <p>
+                      Our approach combines creativity, attention to detail, and a deep understanding of what makes a visual truly memorable. Whether you're an individual looking to preserve a special moment or a business aiming to build a stronger brand identity, we work closely with you to bring your vision to life.
+                    </p>
+                    <p>
+                      We collaborate with individuals, creators, and businesses to produce authentic, impactful, and thoughtfully crafted visuals. Every project is an opportunity to explore new perspectives, express creativity, and tell a story that connects with the right audience.
+                    </p>    
+                    {/* <p>
                       Nice to meet you, friend! My name is Pawan Pal. I’m a
                       professional photographer from Faridabad, Haryana. I hope
                       you enjoy my photo portfolio, and that we can create
@@ -43,11 +61,12 @@ export default function AboutPage() {
                       Years of practice and experience helped me learn techniques
                       that support my work with modern brands and companies. Get
                       in touch and let’s create something together.
-                    </p>
+                    </p> */}
                   </div>
+                  {/* IMG_8224.JPG.jpeg */}
                   <div className="ashade-col col-6 align-bottom">
                     <img
-                      src="/img/general/about-me.jpg"
+                      src="/about/IMG_8225.JPG.jpeg"
                       alt="Pawan Pal, photographer"
                       width="1240"
                       height="1500"
