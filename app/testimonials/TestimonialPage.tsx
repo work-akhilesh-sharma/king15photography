@@ -21,99 +21,95 @@ export default function TestimonialPage() {
         <span className={styles['left-caption']}>What my clients say</span>
         <span className={styles['left-title']}>Testimonials</span>
       </aside>  
-
       
-    
-      
-<main className={styles["page-content"]}>
-  <section className={styles.intro}>
-    <span className={styles.eyebrow}>CLIENT&apos;S REVIEWS</span>
-    <h1>Backstory</h1>
-    <p>
-      After years of practice and experience, I have learned
-      techniques that help me work with modern brands and companies.
-      Here are a few words from clients who have trusted my work.
-    </p>
-  </section>
+      <main className={styles["page-content"]}>
+        <section className={styles.intro}>
+          <span className={styles.eyebrow}>CLIENT&apos;S REVIEWS</span>
+          <h1>Backstory</h1>
+          <p>
+            After years of practice and experience, I have learned
+            techniques that help me work with modern brands and companies.
+            Here are a few words from clients who have trusted my work.
+          </p>
+        </section>
 
-  <section
-    className={styles.testimonialsGrid}
-    aria-label="Client testimonials"
-  >
-    <article className={styles.testimonialCard}>
-      <div className={styles.stars} aria-label="4 out of 5 stars">
-        ★★★★☆
-      </div>
-      <p className={styles.review}>
-        The shoot experience was excellent. The team was
-        professional, creative, punctual, and easy to work with.
-        Highly recommended for their quality, dedication, and
-        seamless execution.
-      </p>
-      <div className={styles.author}>
-        <Image
-          src="/img/avatars/testimonial04.jpg"
-          width={64}
-          height={64}
-          alt="Vishal Kwatra"
-        />
-        <div>
-          <h3>Vishal Kwatra</h3>
-          <span>Director, Anytime Fitness</span>
-        </div>
-      </div>
-    </article>
+        <section
+          className={styles.testimonialsGrid}
+          aria-label="Client testimonials"
+        >
+          <article className={styles.testimonialCard}>
+            <div className={styles.stars} aria-label="4 out of 5 stars">
+              ★★★★☆
+            </div>
+            <p className={styles.review}>
+              The shoot experience was excellent. The team was
+              professional, creative, punctual, and easy to work with.
+              Highly recommended for their quality, dedication, and
+              seamless execution.
+            </p>
+            <div className={styles.author}>
+              <Image
+                src="/img/avatars/testimonial04.jpg"
+                width={64}
+                height={64}
+                alt="Vishal Kwatra"
+              />
+              <div>
+                <h3>Vishal Kwatra</h3>
+                <span>Director, Anytime Fitness</span>
+              </div>
+            </div>
+          </article>
 
-    <article className={styles.testimonialCard}>
-      <div className={styles.stars} aria-label="5 out of 5 stars">
-        ★★★★★
-      </div>
-      <p className={styles.review}>
-        Working with this team was a refreshing experience.
-        They understood our vision perfectly and captured the
-        energy of Mission Fitness beautifully. The final work
-        felt authentic, engaging, and impactful.
-      </p>
-      <div className={styles.author}>
-        <Image
-          src="/img/avatars/testimonial05.jpg"
-          width={64}
-          height={64}
-          alt="Karan Kholi"
-        />
-        <div>
-          <h3>Karan Kholi</h3>
-          <span>CEO, Mission Fitness</span>
-        </div>
-      </div>
-    </article>
+          <article className={styles.testimonialCard}>
+            <div className={styles.stars} aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p className={styles.review}>
+              Working with this team was a refreshing experience.
+              They understood our vision perfectly and captured the
+              energy of Mission Fitness beautifully. The final work
+              felt authentic, engaging, and impactful.
+            </p>
+            <div className={styles.author}>
+              <Image
+                src="/img/avatars/testimonial05.jpg"
+                width={64}
+                height={64}
+                alt="Karan Kholi"
+              />
+              <div>
+                <h3>Karan Kholi</h3>
+                <span>CEO, Mission Fitness</span>
+              </div>
+            </div>
+          </article>
 
-    <article className={styles.testimonialCard}>
-      <div className={styles.stars} aria-label="5 out of 5 stars">
-        ★★★★★
-      </div>
-      <p className={styles.review}>
-        Working with the King15 team was a seamless experience.
-        Their creativity, professionalism, attention to detail,
-        and execution delivered high-quality visuals that
-        perfectly captured our brand and vision.
-      </p>
-      <div className={styles.author}>
-        <Image
-          src="/img/avatars/testimonial06.jpg"
-          width={64}
-          height={64}
-          alt="Himanshu Gupta"
-        />
-        <div>
-          <h3>Himanshu Gupta</h3>
-          <span>Bharat Petroleum Corporation Limited</span>
-        </div>
-      </div>
-    </article>
-  </section>
-</main>
-  
+          <article className={styles.testimonialCard}>
+            <div className={styles.stars} aria-label="5 out of 5 stars">
+              ★★★★★
+            </div>
+            <p className={styles.review}>
+              Working with the King15 team was a seamless experience.
+              Their creativity, professionalism, attention to detail,
+              and execution delivered high-quality visuals that
+              perfectly captured our brand and vision.
+            </p>
+            <div className={styles.author}>
+              <Image
+                src="/img/avatars/testimonial06.jpg"
+                width={64}
+                height={64}
+                alt="Himanshu Gupta"
+              />
+              <div>
+                <h3>Himanshu Gupta</h3>
+                <span>Bharat Petroleum Corporation Limited</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
 
       <div className="ashade-to-top-wrap ashade-back-wrap">
         <div className="ashade-back is-to-top">
