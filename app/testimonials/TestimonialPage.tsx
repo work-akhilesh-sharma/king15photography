@@ -49,13 +49,13 @@ export default function TestimonialPage() {
             </p>
             <div className={styles.author}>
               <Image
-                src="/img/avatars/testimonial04.jpg"
+                src="/testimonials/Anytime-Fitness-Logo-No-Background.png"
                 width={64}
                 height={64}
                 alt="Vishal Kwatra"
               />
               <div>
-                <h3>Vishal Kwatra</h3>
+                <h3>Mr. Vishal Kwatra</h3>
                 <span>Director, Anytime Fitness</span>
               </div>
             </div>
@@ -66,21 +66,18 @@ export default function TestimonialPage() {
               ★★★★★
             </div>
             <p className={styles.review}>
-              Working with this team was a refreshing experience.
-              They understood our vision perfectly and captured the
-              energy of Mission Fitness beautifully. The final work
-              felt authentic, engaging, and impactful.
+              Working with this team was a seamless experience. They understood our brand perfectly and captured the essence of APML (Agarwal Packers and Movers) with professionalism. The final visuals beautifully reflected our commitment to trust, reliability, and excellence, making the entire project impactful and engaging.
             </p>
             <div className={styles.author}>
               <Image
-                src="/img/avatars/testimonial05.jpg"
+                src="/testimonials/apml.jpeg"
                 width={64}
                 height={64}
                 alt="Karan Kholi"
               />
               <div>
-                <h3>Karan Kholi</h3>
-                <span>CEO, Mission Fitness</span>
+                <h3>Mr. Ramesh Agarwal</h3>
+                <span>Managing Director, Agarwal Packers and Movers Ltd.</span>
               </div>
             </div>
           </article>
@@ -97,13 +94,13 @@ export default function TestimonialPage() {
             </p>
             <div className={styles.author}>
               <Image
-                src="/img/avatars/testimonial06.jpg"
+                src="/testimonials/Bharat-Petroleum-emblem.png"
                 width={64}
                 height={64}
                 alt="Himanshu Gupta"
               />
               <div>
-                <h3>Himanshu Gupta</h3>
+                <h3>Mr. Himanshu Gupta</h3>
                 <span>Bharat Petroleum Corporation Limited</span>
               </div>
             </div>
