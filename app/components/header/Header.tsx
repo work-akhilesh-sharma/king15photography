@@ -22,7 +22,7 @@ export default function Header() {
     setIsMenuOpen(false);
   }
 
-  return (
+  return ( 
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <Link href="/" className={styles.logo} onClick={closeMenu} aria-label="KING15 Photography home">
