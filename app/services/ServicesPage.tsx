@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import styles from "./Service.module.css";
+import styles from "./ServicesPage.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -64,7 +64,7 @@ const services = [
   },
 ];
 
-export default function ServicePage() {
+export default function ServicesPage() {
 
   const [animateLabels, setAnimateLabels] = useState(false);
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import TestimonialPage from "./TestimonialPage";
+import TestimonialsPage from "./TestimonialsPage";
 
 export const metadata: Metadata = {
   title: "Testimonials | King15Photography",
@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 
 
 export default function Page() {
-    return <TestimonialPage />;
+    return <TestimonialsPage />;
 }

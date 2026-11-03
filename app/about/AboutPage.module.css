@@ -4,8 +4,6 @@
   --rail-text: #858585;
 
   position: relative;
-  /* display: grid; */
-  /* grid-template-columns: minmax(0, 1fr); */
   width: 100%;
   min-width: 0;
   min-height: 100vh;
@@ -19,7 +17,6 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  /* border-left: 1px solid var(--rail-color); */
   pointer-events: none;
   z-index: 5;
 }
@@ -31,7 +28,6 @@
 
 .right-rail {
   right: 5.2%;
-  /* border-left: 0; */
   border-right: 1px solid var(--rail-color);
 }
 
@@ -53,8 +49,6 @@
   color: var(--rail-text);
   text-transform: uppercase;
   transition: color 0.3s ease;
-  /* top: 50%;
-  transform: translateY(-50%) rotate(180deg); */
 }
 
 .left-caption,
@@ -100,7 +94,6 @@
 .back-to-top {
   top: 65%;
   right: -48px;
-  /* bottom: 100px; */
   font-size: clamp(30px, 3vw, 46px);
   font-weight: 700;
   text-decoration: none;
@@ -194,7 +187,6 @@
   min-width: 0;
   height: 100%;
 }
-
 
 /* Before/after comparison */
 .page-content :global(.king15-before-after) {

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ServicePage from "./ServicePage";
+import ServicesPage from "./ServicesPage";
 
 export const metadata: Metadata = {
   title: "Services | King15Photography",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    return <ServicePage />;
+    return <ServicesPage />;
 }

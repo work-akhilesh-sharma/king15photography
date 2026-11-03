@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link";
-import styles from "./contact.module.css";
+import styles from "./ContactPage.module.css";
 import { useEffect, useState } from "react";
 import type { SubmitEventHandler } from "react";
 
@@ -192,95 +192,9 @@ export default function ContactPage() {
             </section>
           </div>      
         </div>      
-
-        {/* <section className={styles.contactPage}> */}
-          {/* LEFT VERTICAL CONTACT */}
-          {/* <button
-            className={`${styles.verticalLink} ${styles.contactLeft}`}
-            // onClick={showHome}
-          >
-            <span>HOW TO FIND ME</span>
-            <strong>CONTACT ME</strong>
-          </button> */}
-
-          {/* RIGHT VERTICAL LINKS */}
-          {/* <div className={styles.rightPanel}>
-            {/* <button
-              className={styles.verticalLink}
-              type="button"
-            >
-              <span>MY PHOTO PORTFOLIO</span>
-              <strong>EXPLORE WORKS</strong>
-            </button> }
-
-            <button
-              className={`${styles.verticalLink} ${styles.backLink}`}
-            //   onClick={showHome}
-            >
-              <strong>BACK</strong>
-            </button>
-          </div> */}
-
-          {/* CONTACT CONTENT */}
-          {/* <div className={styles.contactContent}> */}
-            {/* Intro */}
-            {/* <div className={styles.contactIntro}>
-              <p>
-                Nice to meet you, friend! My name is Pawan Pal. I’m a
-                professional photographer from Faridabad, Colorado. If you
-                have any questions, suggestions or you just want to book a
-                photo session feel free to use the contact form below. Lets
-                make something great together!
-              </p>
-            </div> */}
-
-            {/* Contact information */}
-            {/* <div className={styles.contactGrid}> */}
-              {/* LEFT */}
-              {/* <div className={styles.contactInfo}>
-                <div className={styles.smallTitle}>
-                  MY CONTACTS AND SOCIALS
-                </div>
-
-                <h2>HOW TO FIND ME</h2>
-
-                <div className={styles.infoItem}>
-                  <div className={styles.icon}>⌖</div>
-                  <p>
-                    First floor, DB-874, Sector-50, NIT
-                    <br />
-                    Faridabad, Haryana 121001
-                  </p>
-                </div>
-
-                <div className={styles.infoItem}>
-                  <div className={styles.icon}>⌕</div>
-                  <p>+91 8802890848</p>
-                </div>
-
-                <div className={styles.infoItem}>
-                  <div className={styles.icon}>✉</div>
-                  <p>king15photographer@gmail.com</p>
-                </div>
-
-                <div className={styles.infoItem}>
-                  <div className={styles.icon}>♧</div>
-                  <p>
-                    <Link className={styles.link} href="https://www.linkedin.com/company/king15photography/" target="_blank" rel="noopener noreferrer">Ln</Link>&nbsp;&nbsp;
-                    <Link className={styles.link} href="https://www.instagram.com/king15_photography?stkn=ZTBreHUyNXhvNGMw" target="_blank" rel="noopener noreferrer">In</Link>
-                  </p>
-                </div>
-              </div> */}
-
-              {/* RIGHT FORM */}
-{/*               
-            </div> */}
-          {/* </div> */}
-        {/* </section> */}
       </main>
       
       <aside className={styles['right-rail']}>
-        {/* <span className={styles['back-to-label']}>BACK TO</span> */}
         <span
           className={`${styles["back-to-label"]} ${
           animateLabels ? styles["from-bottom"] : ""
@@ -288,7 +202,6 @@ export default function ContactPage() {
         >
           Back To
         </span>
-        {/* <a href="#top" className={styles['back-to-top']}>TOP</a> */}
         <a
           href="#top"
           className={`${styles["back-to-top"]} ${
