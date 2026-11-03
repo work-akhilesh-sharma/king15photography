@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import styles from "./testimonial.module.css";
+import styles from "./TestimonialsPage.module.css";
 
-export default function TestimonialPage() {
+export default function TestimonialsPage() {
   const [animateLabels, setAnimateLabels] = useState(false);
   useEffect(() => {
     const frame = requestAnimationFrame(() => {

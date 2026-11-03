@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import Header from "./header/header";
-import Footer from "./footer/footer";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 import WhatsAppButton from "./WhatsAppButton";
 
 interface MainLayoutProps {

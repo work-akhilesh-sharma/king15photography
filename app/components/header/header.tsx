@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./header.module.css";
+import styles from "./Header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -9,8 +9,9 @@ import { usePathname } from "next/navigation";
 const menuItems = [
   { label: "About Me", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Clients", href: "/clients" },
   { label: "Testimonials", href: "/testimonials" },
-  { label: "Contacts", href: "/contacts" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {

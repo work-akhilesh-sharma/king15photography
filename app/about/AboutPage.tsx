@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./about.module.css";
+import Image from "next/image";
+import styles from "./AboutPage.module.css";
 
 export default function AboutPage() {
   const [animateLabels, setAnimateLabels] = useState(false);
@@ -26,11 +27,6 @@ export default function AboutPage() {
               <section className="ashade-section">
                 <div className="ashade-row ashade-row-fullheight exclude-header">
                   <div className="ashade-col col-6">
-                    {/* <h2>
-                      <span>Few Words About Myself</span>
-                      Nice to Meet You
-                    </h2> */}
-
                     <h3>
                       <span>About Us</span>
                       We Don’t Just Capture Moments. We Create Stories.
@@ -50,18 +46,20 @@ export default function AboutPage() {
                     </p>    
                   </div>
                   <div className="ashade-col col-6 align-bottom">
-                    <img
+                    <Image 
                       src="/about/IMG_8225.JPG.jpeg"
+                      width={1240}
+                      height={1500}
                       alt="Pawan Pal, photographer"
-                      width="1240"
-                      height="1500"
+                      priority
+                      loading="eager"
                       style={{
                         display: "block",
                         width: "100%",
                         height: "100%",
                         objectFit: "cover"
                       }}
-                      />
+                    />
                   </div>
                 </div>
               </section>
@@ -87,7 +85,6 @@ export default function AboutPage() {
         </div>
       </main>
       <aside className={styles['right-rail']}>
-        {/* <span className={styles['back-to-label']}>BACK TO</span> */}
         <span
           className={`${styles["back-to-label"]} ${
           animateLabels ? styles["from-bottom"] : ""
@@ -95,7 +92,6 @@ export default function AboutPage() {
         >
           Back to
         </span>
-        {/* <a href="#top" className={styles['back-to-top']}>TOP</a> */}
         <a
           href="#top"
           className={`${styles["back-to-top"]} ${
