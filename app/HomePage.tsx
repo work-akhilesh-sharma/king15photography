@@ -8,7 +8,7 @@ export default function HomePage() {
     <div className={styles.background}>
       <div className={styles.overlay}>
         {/* Contact Me - RIGHT */}
-        <Link href="/contacts">
+        <Link href="/contact">
           <button
             className={`${styles.verticalLink} ${styles.contactRight}`}
             >
