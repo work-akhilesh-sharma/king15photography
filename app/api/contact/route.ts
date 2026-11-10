@@ -45,12 +45,12 @@ function containsControlCharacters(value: string): boolean {
   return /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/.test(value);
 }
 
-interface ContactRequest {
-  name: string;
-  email: string;
-  phone: string;
-  message: string;
-}
+// interface ContactRequest {
+//   name: string;
+//   email: string;
+//   phone: string;
+//   message: string;
+// }
 
 export async function POST(request: Request) {
   try {
@@ -102,8 +102,8 @@ export async function POST(request: Request) {
     // Parse JSON
     let body: unknown;
 
-    // const body = (await request.json()) as ContactRequest;
     try {
+      // const body = (await request.json()) as ContactRequest;
       body = await request.json();
     } catch {
       return NextResponse.json(
